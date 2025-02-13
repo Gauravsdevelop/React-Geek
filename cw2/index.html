@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+      h1 {
+        font-size: 32px;
+        background-color:#0086b3;
+        padding: 40px;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.5);
+        
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.6;
+        background-color:#66d9ff;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      a {
+        color: black;
+        font-weight: bold;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root"></div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <script>
+      const heading = React.createElement("h1", null, "Function and Class Components");
+
+      const prargraph1 = React.createElement("p", null, "A function is a valid React component because it accepts a single “props” (which stands for properties) object argument with data and returns a React element. We call such components “function components” because they are literally JavaScript functions.");
+
+      const paragraph2 = React.createElement(
+        "p",
+        null,
+        "Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components. ",
+        React.createElement("a", { href: "https://legacy.reactjs.org/docs/components-and-props.html" }, "see more"),
+      );
+
+      const paragraph3 = React.createElement(
+        "p",
+        null,
+        "Whether you declare a component as a function or a class, it must never modify its own props.Such functions are called “pure” because they do not attempt to change their inputs, and always return the same result for the same inputs."
+      );
+
+      const container = React.createElement(
+        "div",
+        null,
+        heading,
+        prargraph1,
+        paragraph2,
+        paragraph3
+      );
+
+      ReactDOM.render(container, document.querySelector(".root"));
+    </script>
+  </body>
+</html>
